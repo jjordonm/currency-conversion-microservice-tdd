@@ -1,0 +1,4 @@
+flask
+pytest
+requests
+requests-mock
