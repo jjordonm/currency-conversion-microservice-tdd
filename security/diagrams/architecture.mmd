@@ -1,0 +1,7 @@
+graph TD
+    Client[Client (User/Consumer)] -->|1. HTTPS Request: /convert| API[Flask REST API]
+    API -->|2. Validate Params| Validation[Validation Module]
+    API -->|3. Fetch Rate| Exchange[Exchange Module]
+    Exchange -->|4. HTTPS Request: External API| ExtAPI[exchangerate.host]
+    Exchange -->|5. Fallback| Fallback[Static Rates]
+    API -->|6. JSON Response| Client
